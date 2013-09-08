@@ -1,4 +1,4 @@
-# grunt-parallelize
+# grunt-parallelize [![Build Status](https://secure.travis-ci.org/teppeis/grunt-parallelize.png?branch=master)](https://travis-ci.org/teppeis/grunt-parallelize) [![Dependency Status](https://david-dm.org/teppeis/grunt-parallelize.png)](https://david-dm.org/teppeis/grunt-parallelize) 
 
 > Make your task parallel.
 
