@@ -1,0 +1,51 @@
+{
+  "name": "grunt-parallelize",
+  "description": "Parallelize your task.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/teppeis/grunt-parallelize",
+  "author": {
+    "name": "Teppei Sato",
+    "email": "teppeis@gmail.com",
+    "url": "http://twitter.com/teppeis"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/teppeis/grunt-parallelize.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teppeis/grunt-parallelize/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/teppeis/grunt-parallelize/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-mocha-test": "~0.6.3",
+    "grunt": "~0.4.1",
+    "mocha": "~1.12.1",
+    "expect.js": "~0.2.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "time-grunt": "~0.1.1",
+    "load-grunt-tasks": "~0.1.0"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.1"
+  },
+  "keywords": [
+    "grunt",
+    "gruntplugin"
+  ],
+  "dependencies": {
+    "lpad": "~0.1.0"
+  }
+}
