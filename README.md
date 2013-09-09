@@ -133,6 +133,9 @@ grunt.initConfig({
   },
 });
 ```
+## Thanks
+
+This plugin is inspired by [sindresorhus's grunt-concurrent](https://github.com/sindresorhus/grunt-concurrent). Thanks!
 
 ## Release History
 
