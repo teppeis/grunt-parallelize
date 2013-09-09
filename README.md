@@ -68,7 +68,7 @@ Done, without errors.
 ### Why grunt-parallelize?
 
 There are concurrent or parallel processing grunt plugins like [grunt-concurrent](https://github.com/sindresorhus/grunt-concurrent) or [grunt-parallel](https://github.com/iammerrick/grunt-parallel).
-They executes different tasks in parallel, but this plugin divides a task into multi processes.
+They execute different tasks in parallel, but this plugin divides a task into multi processes.
 
 ## Configuration
 
@@ -76,7 +76,6 @@ They executes different tasks in parallel, but this plugin divides a task into m
 
 #### options.processes
 Type: `Number`
-Default value: `2`
 
 A number of processes.
 
