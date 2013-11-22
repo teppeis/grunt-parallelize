@@ -1,7 +1,7 @@
 {
   "name": "grunt-parallelize",
   "description": "Parallelize your task.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/teppeis/grunt-parallelize",
   "author": {
     "name": "Teppei Sato",
@@ -46,6 +46,8 @@
     "gruntplugin"
   ],
   "dependencies": {
-    "lpad": "~0.1.0"
+    "lpad": "~0.1.0",
+    "async": "~0.2.9",
+    "lodash": "~2.3.0"
   }
 }
