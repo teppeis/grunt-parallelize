@@ -139,5 +139,6 @@ This plugin is inspired by [sindresorhus's grunt-concurrent](https://github.com/
 
 ## Release History
 
+* 2013-12-23 v1.0.0 Update dependencies
 * 2013-11-22 v0.1.1 Replace deprecated grunt.util methods in grunt-0.4.2
 * 2013-09-09 v0.1.0 First release

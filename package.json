@@ -1,7 +1,7 @@
 {
   "name": "grunt-parallelize",
   "description": "Parallelize your task.",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "homepage": "https://github.com/teppeis/grunt-parallelize",
   "author": {
     "name": "Teppei Sato",
@@ -29,17 +29,17 @@
     "test": "grunt test"
   },
   "devDependencies": {
-    "grunt-contrib-jshint": "~0.6.4",
-    "grunt-mocha-test": "~0.6.3",
-    "grunt": "~0.4.1",
-    "mocha": "~1.12.1",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-mocha-test": "~0.8.1",
+    "grunt": "~0.4.2",
+    "mocha": "~1.16.1",
     "expect.js": "~0.2.0",
     "grunt-contrib-watch": "~0.5.3",
-    "time-grunt": "~0.1.1",
-    "load-grunt-tasks": "~0.1.0"
+    "time-grunt": "~0.2.5",
+    "load-grunt-tasks": "~0.2.1"
   },
   "peerDependencies": {
-    "grunt": "~0.4.1"
+    "grunt": "~0.4.2"
   },
   "keywords": [
     "grunt",
@@ -48,6 +48,6 @@
   "dependencies": {
     "lpad": "~0.1.0",
     "async": "~0.2.9",
-    "lodash": "~2.3.0"
+    "lodash": "~2.4.1"
   }
 }
