@@ -6,6 +6,14 @@ This plugin divides src files of your task and executes them in parallel.
 
 If your task has too many src files and it's CPU intensive like JSHint, this plugin reduces your build time significantly.
 
+#### Before (36sec to jshint 1640 files)
+
+![Before](https://raw.github.com/teppeis/grunt-parallelize/master/misc/before.png "Before")
+
+#### Parallelize!  (14sec to jshint 1640 files by 4 parallel)
+
+![Parallelize!](https://raw.github.com/teppeis/grunt-parallelize/master/misc/after.png "Parallelize!")
+
 ## Getting Started
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide.
 Then you can install this plugin to your project with:
