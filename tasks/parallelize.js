@@ -27,8 +27,12 @@ module.exports = function(grunt) {
       executor.exec(grunt, this.data, task, this.async());
     } else {
       var childFilesSrcOption = grunt.option('grunt-parallelize-child-filesSrc');
+	  var childFilesFromOption = grunt.option('grunt-parallelize-child-filesFrom');
       if (childFilesSrcOption) {
         // this is spawned child process
+        taskRunner(grunt, childFilesSrcOption, task, target);
+      } else if (childFilesFromOption) {
+        childFilesSrcOption = grunt.file.read(childFilesFromOption);
         taskRunner(grunt, childFilesSrcOption, task, target);
       } else {
         var parallelizer = new Parallelizer(grunt, this);
