@@ -21,6 +21,7 @@ describe('grunt-parallelize', function() {
   });
 
   describe('grunt parallelize:task', function() {
+    this.timeout(5000);
     it('runs all targets', function(done) {
       testGruntfile('runAllTargets', done);
     });
@@ -31,8 +32,8 @@ describe('grunt-parallelize', function() {
   });
 
   describe('grunt parallelize', function() {
+    this.timeout(5000);
     it('runs all tasks', function(done) {
-      this.timeout(5000);
       testGruntfile('runAllTasks', done);
     });
   });
