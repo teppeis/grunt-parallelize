@@ -1,14 +1,14 @@
 Running "parallelize:echofilesrc:test_src" (parallelize) task
     
     Running "echofilesrc:test_src" (echofilesrc) task
-    - ../fixtures/1.js
-    - ../fixtures/2.js
+    - ../fixtures/1.txt
+    - ../fixtures/2.txt
     
     Done, without errors.
         
     Running "echofilesrc:test_src" (echofilesrc) task
-    - ../fixtures/3.js
-    - ../fixtures/4.js
+    - ../fixtures/3.txt
+    - ../fixtures/4.txt
     
     Done, without errors.
     

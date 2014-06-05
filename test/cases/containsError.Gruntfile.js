@@ -5,8 +5,8 @@ module.exports = function(grunt) {
     echofilesrc: {
       test_src: {
         src: [
-            '../fixtures/error/*.js',
-            '../fixtures/*.js',
+            '../fixtures/error/*.txt',
+            '../fixtures/*.txt',
         ]
       }
     },
