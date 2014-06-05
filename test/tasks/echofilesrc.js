@@ -22,9 +22,10 @@ function createMultiTask(grunt, name) {
       var body = fs.readFileSync(file, {encoding: 'utf8'});
       body = body.replace(/\n$/, '');
       if (body) {
-        if (/^\d+$/.test(body)) {
+        var match = /^(\d+)ms$/.exec(body);
+        if (match) {
           // wait if the file contains number for order.
-          setTimeout(function() {next()}, Number(body));
+          setTimeout(function() {next();}, Number(match[1]));
         } else {
           // throw the body message.
           throw new Error(body);
