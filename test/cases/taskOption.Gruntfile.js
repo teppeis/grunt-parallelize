@@ -4,7 +4,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     echofilesrc: {
       test_src: {
-        src: '../fixtures/*.js',
+        src: '../fixtures/*.txt',
       }
     },
 

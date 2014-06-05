@@ -1,14 +1,14 @@
 Running "parallelize:echofilesrc:test_src" (parallelize) task
     
     Running "echofilesrc:test_src" (echofilesrc) task
-    - ../fixtures/error/1.js
+    - ../fixtures/error/1.txt
     Warning: Oh error! Use --force to continue.
     
     Aborted due to warnings.
         
     Running "echofilesrc:test_src" (echofilesrc) task
-    - ../fixtures/3.js
-    - ../fixtures/4.js
+    - ../fixtures/3.txt
+    - ../fixtures/4.txt
     
     Done, without errors.
     

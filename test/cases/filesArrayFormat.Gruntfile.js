@@ -5,7 +5,7 @@ module.exports = function(grunt) {
     echofilesrc: {
       test_filesArray: {
         files: [
-          {src: ['../fixtures/*.js']},
+          {src: ['../fixtures/*.txt']},
         ]
       }
     },

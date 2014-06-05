@@ -4,22 +4,22 @@ module.exports = function(grunt) {
   grunt.initConfig({
     echofilesrc: {
       test_src: {
-        src: '../fixtures/*.js',
+        src: '../fixtures/*.txt',
       },
       test_filesArray: {
         files: [
-          {src: ['../fixtures/*.js']},
+          {src: ['../fixtures/*.txt']},
         ]
       }
     },
 
     echofilesrc2: {
       test_src: {
-        src: '../fixtures/*.js',
+        src: '../fixtures/*.txt',
       },
       test_filesArray: {
         files: [
-          {src: ['../fixtures/*.js']},
+          {src: ['../fixtures/*.txt']},
         ]
       }
     },
