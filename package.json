@@ -1,12 +1,11 @@
 {
   "name": "grunt-parallelize",
   "description": "Parallelize your task.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "homepage": "https://github.com/teppeis/grunt-parallelize",
   "author": {
     "name": "Teppei Sato",
-    "email": "teppeis@gmail.com",
-    "url": "http://twitter.com/teppeis"
+    "email": "teppeis@gmail.com"
   },
   "repository": {
     "type": "git",
@@ -21,7 +20,7 @@
       "url": "https://github.com/teppeis/grunt-parallelize/blob/master/LICENSE"
     }
   ],
-  "main": "Gruntfile.js",
+  "main": "./tasks/parallelize.js",
   "engines": {
     "node": ">= 0.10.0"
   },
