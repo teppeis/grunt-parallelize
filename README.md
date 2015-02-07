@@ -1,4 +1,5 @@
-# grunt-parallelize [![Build Status](https://secure.travis-ci.org/teppeis/grunt-parallelize.png?branch=master)](https://travis-ci.org/teppeis/grunt-parallelize) [![Dependency Status](https://david-dm.org/teppeis/grunt-parallelize.png)](https://david-dm.org/teppeis/grunt-parallelize) 
+grunt-parallelize [![NPM version][npm-image]][npm-url] [![build status][travis-image]][travis-url] [![Dependency Status][deps-image]][deps-url]
+====
 
 > Make your task parallel.
 
@@ -151,3 +152,14 @@ This plugin is inspired by [sindresorhus's grunt-concurrent](https://github.com/
 * 2013-12-23 v1.0.0 Update dependencies
 * 2013-11-22 v0.1.1 Replace deprecated grunt.util methods in grunt-0.4.2
 * 2013-09-09 v0.1.0 First release
+
+## License
+
+MIT License: Teppei Sato &lt;teppeis@gmail.com&gt;
+
+[npm-image]: https://img.shields.io/npm/v/grunt-parallelize.svg
+[npm-url]: https://npmjs.org/package/grunt-parallelize
+[travis-image]: https://travis-ci.org/teppeis/grunt-parallelize.svg?branch=master
+[travis-url]: https://travis-ci.org/teppeis/grunt-parallelize
+[deps-image]: https://david-dm.org/teppeis/grunt-parallelize.svg
+[deps-url]: https://david-dm.org/teppeis/grunt-parallelize
