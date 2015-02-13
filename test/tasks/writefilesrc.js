@@ -7,8 +7,6 @@
  */
 'use strict';
 
-//var fs = require('fs');
-
 /*
  * Write src files to dest file for test.
  */
