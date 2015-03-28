@@ -25,7 +25,9 @@ function createMultiTask(grunt, name) {
         var match = /^(\d+)ms$/.exec(body);
         if (match) {
           // wait if the file contains number for order.
-          setTimeout(function() {next();}, Number(match[1]));
+          // 100ms is enough for local machine, but too small for travis.
+          var factor = Number(process.env.DELAY_FACTOR) || 1;
+          setTimeout(function() {next();}, Number(match[1]) * factor);
         } else {
           // throw the body message.
           throw new Error(body);
