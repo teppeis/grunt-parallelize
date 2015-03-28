@@ -101,7 +101,8 @@ function testGruntfile(name, callback) {
       return;
     }
     try {
-      expect(stdout).to.be(expected);
+      expect(stdout.split('\n').sort().join('\n'))
+        .to.be(expected.split('\n').sort().join('\n'));
     } catch (e) {
       console.log('expected:');
       console.log(expected);
