@@ -4,6 +4,10 @@ require('mocha');
 var expect = require('expect.js');
 var exec = require('child_process').exec;
 var fs = require('fs');
+var path = require('path');
+var rimraf = require('rimraf');
+var glob = require('glob');
+var ansidiff = require('ansidiff');
 
 describe('grunt-parallelize', function() {
   this.timeout(5000);
@@ -51,87 +55,64 @@ describe('grunt-parallelize', function() {
 
   describe('Writes files', function() {
     it('Compact Format', function(done){
-      testGruntfileWithFileWrite('compactFormatWithDest', done);
+      testGruntfile('compactFormatWithDest', done);
     });
 
     it('Files Array Format', function(done){
-      testGruntfileWithFileWrite('filesArrayFormatWithDest', done);
+      testGruntfile('filesArrayFormatWithDest', done);
     });
 
     it('Files Object Format', function(done){
-      testGruntfileWithFileWrite('filesObjectFormatWithDest', done);
+      testGruntfile('filesObjectFormatWithDest', done);
     });
   });
 });
 
-function testGruntfileWithFileWrite(name, callback){
+function testGruntfile(name, callback){
   var prefix = __dirname + '/cases/' + name;
   var gruntfile = prefix + '.Gruntfile.js';
   var expectedDir = __dirname + '/fixtures/file_output/';
-  var expectedFiles = [];
-  fs.readdirSync(expectedDir).forEach(function(file){
-    if (file.indexOf(name) === 0) {
-      expectedFiles.push(file);
-    }
-  });
+  var expectedFiles = glob.sync(expectedDir + name + '-*.txt');
   var outputDir = __dirname + '/output/';
-  // clean up the output dir
-  deleteFolderRecursive(outputDir);
+  if (expectedFiles.length > 0) {
+    // clean up the output dir
+    rimraf.sync(outputDir);
+  }
 
   runGruntfile(gruntfile, function(err, stdout, stderr) {
-    expectedFiles.forEach(function(file){
-      expect(fs.readFileSync(outputDir + file, {encoding: 'utf8'}))
-        .to.be(fs.readFileSync(expectedDir + file, {encoding: 'utf8'}));
-    });
-    callback(err);
-  });
-}
-
-function testGruntfile(name, callback) {
-  var prefix = __dirname + '/cases/' + name;
-  var gruntfile = prefix + '.Gruntfile.js';
-  runGruntfile(gruntfile, function(err, stdout, stderr) {
-    var expectedFile = prefix + (err ? '.ng.txt' : '.ok.txt');
+    var expectedStdOut = prefix + (err ? '.ng.txt' : '.ok.txt');
     var expected;
     try {
-      expected = fs.readFileSync(expectedFile, {encoding: 'utf8'});
+      expected = fs.readFileSync(expectedStdOut, {encoding: 'utf8'});
     } catch (e) {
       // ng is unexpected.
       console.log('stdout: ' + stdout);
       callback(err || stderr || stdout || true);
       return;
     }
-    try {
-      expect(stdout).to.be(expected);
-    } catch (e) {
-      console.log('expected:');
-      console.log(expected);
-      console.log('actual:');
-      console.log(stdout);
-      throw e;
-    }
+    assertDiff(stdout, expected);
+
+    expectedFiles.forEach(function(expectedFile){
+      var file = path.basename(expectedFile);
+      var actual = fs.readFileSync(outputDir + file, {encoding: 'utf8'});
+      var expected = fs.readFileSync(expectedFile, {encoding: 'utf8'});
+      assertDiff(actual, expected);
+    });
     callback();
   });
+}
+
+function assertDiff(actual, expected) {
+  try {
+    expect(actual).to.be(expected);
+  } catch (e) {
+    console.error(ansidiff.lines(expected, actual));
+    throw e;
+  }
 }
 
 function runGruntfile(gruntfile, callback) {
   var cmd = ['grunt', '--no-color', '--gruntfile', gruntfile].join(' ');
   var options = {};
   exec(cmd, options, callback);
-}
-
-function deleteFolderRecursive(path) {
-  var files = [];
-  if( fs.existsSync(path) ) {
-    files = fs.readdirSync(path);
-    files.forEach(function(file,index){
-      var curPath = path + '/' + file;
-      if(fs.lstatSync(curPath).isDirectory()) { // recurse
-        deleteFolderRecursive(curPath);
-      } else { // delete file
-        fs.unlinkSync(curPath);
-      }
-    });
-    fs.rmdirSync(path);
-  }
 }

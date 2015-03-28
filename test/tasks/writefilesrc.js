@@ -7,6 +7,9 @@
  */
 'use strict';
 
+var async = require('async');
+var consume = require('../lib/consumesource');
+
 /*
  * Write src files to dest file for test.
  */
@@ -17,9 +20,9 @@ function createMultiTask(grunt, name) {
       if (!file.dest) {
         throw new Error('Missing dest');
       }
-
+      grunt.log.writeln('- ' + file.dest);
       grunt.file.write(file.dest, JSON.stringify(file.src) + '\n', {encoding: 'utf8'});
-      next();
+      async.each(file.src, consume, next);
     }, function(err) {
       done(err);
     });
@@ -31,4 +34,3 @@ module.exports = function(grunt) {
 };
 
 module.exports.createMultiTask = createMultiTask;
-
