@@ -1,6 +1,10 @@
 language: node_js
+env:
+  global:
+    # delay to control order of test
+    - DELAY_FACTOR=3
 node_js:
-    - "0.10"
-    - "0.12"
-    - "io.js"
+  - "0.10"
+  - "0.12"
+  - "io.js"
 sudo: false
