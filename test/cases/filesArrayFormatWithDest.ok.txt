@@ -1,0 +1,17 @@
+Running "parallelize:writefilesrc:test" (parallelize) task
+    
+    Running "writefilesrc:test" (writefilesrc) task
+    
+    Done, without errors.
+    
+Running "parallelize:writefilesrc:test_multi" (parallelize) task
+    
+    Running "writefilesrc:test_multi" (writefilesrc) task
+    
+    Done, without errors.
+        
+    Running "writefilesrc:test_multi" (writefilesrc) task
+    
+    Done, without errors.
+    
+Done, without errors.

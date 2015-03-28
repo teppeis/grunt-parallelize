@@ -1,0 +1,7 @@
+Running "parallelize:writefilesrc:test_src" (parallelize) task
+    
+    Running "writefilesrc:test_src" (writefilesrc) task
+    
+    Done, without errors.
+    
+Done, without errors.
