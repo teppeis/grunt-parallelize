@@ -1,16 +1,19 @@
 Running "parallelize:writefilesrc:test" (parallelize) task
     
     Running "writefilesrc:test" (writefilesrc) task
+    - ../output/filesObjectFormatWithDest-1.txt
     
     Done, without errors.
     
 Running "parallelize:writefilesrc:test_multi" (parallelize) task
     
     Running "writefilesrc:test_multi" (writefilesrc) task
+    - ../output/filesObjectFormatWithDest-2.txt
     
     Done, without errors.
         
     Running "writefilesrc:test_multi" (writefilesrc) task
+    - ../output/filesObjectFormatWithDest-3.txt
     
     Done, without errors.
     

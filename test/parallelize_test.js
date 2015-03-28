@@ -90,19 +90,25 @@ function testGruntfile(name, callback){
       callback(err || stderr || stdout || true);
       return;
     }
-    try {
-      expect(stdout).to.be(expected);
-    } catch (e) {
-      console.log(ansidiff.lines(expected, stdout));
-      throw e;
-    }
+    assertDiff(stdout, expected);
+
     expectedFiles.forEach(function(expectedFile){
       var file = path.basename(expectedFile);
-      expect(fs.readFileSync(outputDir + file, {encoding: 'utf8'}))
-        .to.be(fs.readFileSync(expectedFile, {encoding: 'utf8'}));
+      var actual = fs.readFileSync(outputDir + file, {encoding: 'utf8'});
+      var expected = fs.readFileSync(expectedFile, {encoding: 'utf8'});
+      assertDiff(actual, expected);
     });
     callback();
   });
+}
+
+function assertDiff(actual, expected) {
+  try {
+    expect(actual).to.be(expected);
+  } catch (e) {
+    console.error(ansidiff.lines(expected, actual));
+    throw e;
+  }
 }
 
 function runGruntfile(gruntfile, callback) {
