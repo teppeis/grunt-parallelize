@@ -21,6 +21,10 @@ describe('grunt-parallelize', function() {
       testGruntfile('filesArrayFormat', done);
     });
 
+    it('supports cwd option', function(done) {
+      testGruntfile('cwd', done);
+    });
+
     it('runs and displays all child tasks if some task has error"', function(done) {
       testGruntfile('containsError', done);
     });

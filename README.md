@@ -107,6 +107,7 @@ grunt-parallelize supports all [Grunt standard files formats](http://gruntjs.com
 * [Compact Format](http://gruntjs.com/configuring-tasks#compact-format)
 * [Files Object Format](http://gruntjs.com/configuring-tasks#files-object-format)
 * [Files Array Format](http://gruntjs.com/configuring-tasks#files-array-format)
+* [Dynamic Options](http://gruntjs.com/configuring-tasks#building-the-files-object-dynamically)
 
 #### Only `src`
 
