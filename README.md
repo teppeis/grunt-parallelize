@@ -102,17 +102,21 @@ This is equivalent with the above.
 
 ### Files format
 
-Grunt provides [standard files formats](http://gruntjs.com/configuring-tasks#files) in Gruntfile config.
+grunt-parallelize supports all [Grunt standard files formats](http://gruntjs.com/configuring-tasks#files).
 
-grunt-parallelize supports "Compact Format" and "Files Array Format".
+* [Compact Format](http://gruntjs.com/configuring-tasks#compact-format)
+* [Files Object Format](http://gruntjs.com/configuring-tasks#files-object-format)
+* [Files Array Format](http://gruntjs.com/configuring-tasks#files-array-format)
 
-#### Compact Format
+#### Only `src`
+
+If only `src` is specified, the src files are devided per each process.
 
 ```js
 grunt.initConfig({
   jshint: {
     all: {
-      src: ['src/foo/*.js', 'src/bar.js']
+      src: ['src/1.js', 'src/2.js', 'src/3.js']
     }
   },
   parallelize: {
@@ -123,15 +127,23 @@ grunt.initConfig({
 });
 ```
 
-#### Files Array Format
+=> parallelized as:
+
+* Process 1: `src/1.js` and `src/2.js`
+* Process 2: `src/3.js`
+
+#### Both `src` and `dest`
+
+If `dest` is specified, the dest files are devided per each process.
 
 ```js
 grunt.initConfig({
-  jshint: {
+  concat: {
     all: {
       files: [
-        {src: ['src/foo/*.js']},
-        {src: ['src/bar.js', 'src/baz.js']},
+        {src: ['src/1.js', 'src/2.js'], dest: 'dest/1.js'},
+        {src: ['src/3.js', 'src/4.js'], dest: 'dest/2.js'},
+        {src: ['src/5.js'], dest: 'dest/3.js'},
       ],
     }
   },
@@ -142,12 +154,19 @@ grunt.initConfig({
   },
 });
 ```
+
+=> parallelized as:
+
+* Process 1: `dest/1.js` (including 'src/1.js' and 'src/2.js') and `dest/2.js` (including 'src/3.js' and 'src/4.js')
+* Process 2: `dest/3.js` (including 'src/5.js')
+
 ## Thanks
 
 This plugin is inspired by [sindresorhus's grunt-concurrent](https://github.com/sindresorhus/grunt-concurrent). Thanks!
 
 ## Release History
 
+* 2015-03-23 v1.1.0 Support all file formats and `dest`. Fix ENAMETOOLONG [#13](https://github.com/teppeis/grunt-parallelize/issues/13)
 * 2015-02-07 v1.0.1 Update dependencies, test with Node.js v0.12
 * 2013-12-23 v1.0.0 Update dependencies
 * 2013-11-22 v0.1.1 Replace deprecated grunt.util methods in grunt-0.4.2
