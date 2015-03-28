@@ -6,6 +6,8 @@ var exec = require('child_process').exec;
 var fs = require('fs');
 
 describe('grunt-parallelize', function() {
+  this.timeout(5000);
+
   describe('grunt parallelize:task:target', function() {
     it('supports "Compact Format"', function(done) {
       testGruntfile('compactFormat', done);
@@ -21,7 +23,6 @@ describe('grunt-parallelize', function() {
   });
 
   describe('grunt parallelize:task', function() {
-    this.timeout(5000);
     it('runs all targets', function(done) {
       testGruntfile('runAllTargets', done);
     });
