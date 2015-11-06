@@ -25,7 +25,7 @@ describe('grunt-parallelize', function() {
       testGruntfile('cwd', done);
     });
 
-    it('runs and displays all child tasks if some task has error"', function(done) {
+    it('runs and displays all child tasks if some task has error', function(done) {
       testGruntfile('containsError', done);
     });
   });
@@ -35,7 +35,7 @@ describe('grunt-parallelize', function() {
       testGruntfile('runAllTargets', done);
     });
 
-    it('runs and displays all targets if some target has error"', function(done) {
+    it('runs and displays all targets if some target has error', function(done) {
       testGruntfile('someTargetContainsError', done);
     });
   });
