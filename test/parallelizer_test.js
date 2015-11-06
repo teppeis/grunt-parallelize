@@ -40,11 +40,11 @@ describe('Parallelizer', function() {
     });
   });
 
-  describe('#getSplittedFilesSrc_', function() {
+  describe('#getSplittedFiles_', function() {
     var filesSrc, processes;
 
     beforeEach(function() {
-      sut.getNormalizedFilesSrc_ = function() {
+      sut.getNormalizedFiles_ = function() {
         return filesSrc;
       };
       sut.getProcesses_ = function() {
@@ -53,10 +53,10 @@ describe('Parallelizer', function() {
     });
 
     it('throws if "processes" option is negative', function() {
-      filesSrc = [1, 2, 3];
+      filesSrc = [{src: [1, 2, 3]}];
       processes = -1;
       expect(function() {
-        sut.getSplittedFilesSrc_(null, null);
+        sut.getSplittedFiles_(null, null);
       }).to.throwException();
     });
 
@@ -67,52 +67,52 @@ describe('Parallelizer', function() {
 
       it('returns empty array', function() {
         processes = 2;
-        expect(sut.getSplittedFilesSrc_(null, null)).to.be.empty();
+        expect(sut.getSplittedFiles_(null, null)).to.be.empty();
       });
     });
 
     describe('filesSrc has 4 items', function() {
       beforeEach(function() {
-        filesSrc = [1, 2, 3, 4];
+        filesSrc = [{src: [1, 2, 3, 4]}];
       });
 
       it('splits into 0 []', function() {
         processes = 0;
-        expect(sut.getSplittedFilesSrc_(null, null)).to.be.empty();
+        expect(sut.getSplittedFiles_(null, null)).to.be.empty();
       });
 
       it('splits into 1 [4]', function() {
         processes = 1;
-        expect(sut.getSplittedFilesSrc_(null, null)).to.eql([
-          [1, 2, 3, 4]
+        expect(sut.getSplittedFiles_(null, null)).to.eql([
+          {src: [1, 2, 3, 4]}
         ]);
       });
 
       it('splits into 2 [2, 2]', function() {
         processes = 2;
-        expect(sut.getSplittedFilesSrc_(null, null)).to.eql([
-          [1, 2], [3, 4]
+        expect(sut.getSplittedFiles_(null, null)).to.eql([
+          {src: [1, 2]}, {src: [3, 4]}
         ]);
       });
 
       it('splits into 3 [2, 1, 1]', function() {
         processes = 3;
-        expect(sut.getSplittedFilesSrc_(null, null)).to.eql([
-          [1, 2], [3], [4]
+        expect(sut.getSplittedFiles_(null, null)).to.eql([
+          {src: [1, 2]}, {src: [3]}, {src: [4]}
         ]);
       });
 
       it('splits into 4 [1, 1, 1, 1]', function() {
         processes = 4;
-        expect(sut.getSplittedFilesSrc_(null, null)).to.eql([
-          [1], [2], [3], [4]
+        expect(sut.getSplittedFiles_(null, null)).to.eql([
+          {src: [1]}, {src: [2]}, {src: [3]}, {src: [4]}
         ]);
       });
 
       it('splits into 5 [1, 1, 1, 1]', function() {
         processes = 5;
-        expect(sut.getSplittedFilesSrc_(null, null)).to.eql([
-          [1], [2], [3], [4]
+        expect(sut.getSplittedFiles_(null, null)).to.eql([
+          {src: [1]}, {src: [2]}, {src: [3]}, {src: [4]}
         ]);
       });
     });
