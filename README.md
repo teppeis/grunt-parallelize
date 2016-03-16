@@ -167,6 +167,7 @@ This plugin is inspired by [sindresorhus's grunt-concurrent](https://github.com/
 
 ## Release History
 
+* 2016-03-16 v1.1.4 Support grunt@v1.0.0 [#24](https://github.com/teppeis/grunt-parallelize/pull/24)
 * 2015-11-05 v1.1.3 Cleanup tmp files [#21](https://github.com/teppeis/grunt-parallelize/issues/21)
 * 2015-11-05 v1.1.2 Change internal file format [#22](https://github.com/teppeis/grunt-parallelize/issues/22)
 * 2015-11-05 v1.1.1 Update deps [#20](https://github.com/teppeis/grunt-parallelize/issues/20)
