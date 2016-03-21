@@ -2,30 +2,17 @@
   "name": "grunt-parallelize",
   "description": "Parallelize your task.",
   "version": "1.1.4",
-  "homepage": "https://github.com/teppeis/grunt-parallelize",
   "author": {
     "name": "Teppei Sato",
     "email": "teppeis@gmail.com"
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/teppeis/grunt-parallelize.git"
-  },
-  "bugs": {
-    "url": "https://github.com/teppeis/grunt-parallelize/issues"
-  },
-  "license": "MIT",
-  "main": "./tasks/parallelize.js",
   "engines": {
     "node": ">= 0.10.0"
   },
+  "main": "./tasks/parallelize.js",
   "scripts": {
     "test": "grunt test"
   },
-  "keywords": [
-    "grunt",
-    "gruntplugin"
-  ],
   "dependencies": {
     "async": "^1.5.0",
     "lodash": "^4.6.1",
@@ -48,5 +35,18 @@
   },
   "peerDependencies": {
     "grunt": ">=0.4.0"
-  }
+  },
+  "homepage": "https://github.com/teppeis/grunt-parallelize",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/teppeis/grunt-parallelize.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teppeis/grunt-parallelize/issues"
+  },
+  "keywords": [
+    "grunt",
+    "gruntplugin"
+  ],
+  "license": "MIT"
 }
