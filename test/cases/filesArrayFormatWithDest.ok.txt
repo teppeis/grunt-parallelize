@@ -3,18 +3,18 @@ Running "parallelize:writefilesrc:test" (parallelize) task
     Running "writefilesrc:test" (writefilesrc) task
     - ../output/filesArrayFormatWithDest-1.txt
 
-    Done, without errors.
+    Done.
 
 Running "parallelize:writefilesrc:test_multi" (parallelize) task
 
     Running "writefilesrc:test_multi" (writefilesrc) task
     - ../output/filesArrayFormatWithDest-2.txt
 
-    Done, without errors.
+    Done.
 
     Running "writefilesrc:test_multi" (writefilesrc) task
     - ../output/filesArrayFormatWithDest-3.txt
 
-    Done, without errors.
+    Done.
 
-Done, without errors.
+Done.

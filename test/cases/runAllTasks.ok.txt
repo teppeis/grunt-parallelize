@@ -6,15 +6,15 @@ Running "parallelize:echofilesrc" (parallelize) task
         - ../fixtures/1.txt
         - ../fixtures/2.txt
 
-        Done, without errors.
+        Done.
 
         Running "echofilesrc:test_src" (echofilesrc) task
         - ../fixtures/3.txt
         - ../fixtures/4.txt
 
-        Done, without errors.
+        Done.
 
-    Done, without errors.
+    Done.
 
     Running "parallelize:echofilesrc:test_filesArray" (parallelize) task
 
@@ -22,15 +22,15 @@ Running "parallelize:echofilesrc" (parallelize) task
         - ../fixtures/1.txt
         - ../fixtures/2.txt
 
-        Done, without errors.
+        Done.
 
         Running "echofilesrc:test_filesArray" (echofilesrc) task
         - ../fixtures/3.txt
         - ../fixtures/4.txt
 
-        Done, without errors.
+        Done.
 
-    Done, without errors.
+    Done.
 
 Running "parallelize:echofilesrc2" (parallelize) task
 
@@ -40,15 +40,15 @@ Running "parallelize:echofilesrc2" (parallelize) task
         - ../fixtures/1.txt
         - ../fixtures/2.txt
 
-        Done, without errors.
+        Done.
 
         Running "echofilesrc2:test_src" (echofilesrc2) task
         - ../fixtures/3.txt
         - ../fixtures/4.txt
 
-        Done, without errors.
+        Done.
 
-    Done, without errors.
+    Done.
 
     Running "parallelize:echofilesrc2:test_filesArray" (parallelize) task
 
@@ -56,14 +56,14 @@ Running "parallelize:echofilesrc2" (parallelize) task
         - ../fixtures/1.txt
         - ../fixtures/2.txt
 
-        Done, without errors.
+        Done.
 
         Running "echofilesrc2:test_filesArray" (echofilesrc2) task
         - ../fixtures/3.txt
         - ../fixtures/4.txt
 
-        Done, without errors.
+        Done.
 
-    Done, without errors.
+    Done.
 
-Done, without errors.
+Done.
