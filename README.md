@@ -173,6 +173,7 @@ This plugin is inspired by [sindresorhus's grunt-concurrent](https://github.com/
 
 ## Changelog
 
+* 2016-04-08 v1.1.7 Fix peerDependencies [#31](https://github.com/teppeis/grunt-parallelize/pull/31)
 * 2016-04-07 v1.1.6 Use grunt@1 for internal test [#30](https://github.com/teppeis/grunt-parallelize/pull/30)
 * 2016-03-21 v1.1.5 Update dependencies
 * 2016-03-16 v1.1.4 Support grunt@v1.0.0 [#24](https://github.com/teppeis/grunt-parallelize/pull/24)
