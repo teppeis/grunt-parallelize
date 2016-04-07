@@ -10,7 +10,7 @@ Running "parallelize:echofilesrc:test_src" (parallelize) task
     - ../fixtures/3.txt
     - ../fixtures/4.txt
 
-    Done, without errors.
+    Done.
 
 Warning: Task "parallelize:echofilesrc:test_src" failed. Use --force to continue.
 

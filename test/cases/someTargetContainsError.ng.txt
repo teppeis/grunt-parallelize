@@ -12,7 +12,7 @@ Running "parallelize:echofilesrc" (parallelize) task
         - ../fixtures/3.txt
         - ../fixtures/4.txt
 
-        Done, without errors.
+        Done.
 
     Warning: Task "parallelize:echofilesrc:test_src" failed. Use --force to continue.
 
@@ -24,15 +24,15 @@ Running "parallelize:echofilesrc" (parallelize) task
         - ../fixtures/1.txt
         - ../fixtures/2.txt
 
-        Done, without errors.
+        Done.
 
         Running "echofilesrc:test_filesArray" (echofilesrc) task
         - ../fixtures/3.txt
         - ../fixtures/4.txt
 
-        Done, without errors.
+        Done.
 
-    Done, without errors.
+    Done.
 
 Warning: Task "parallelize:echofilesrc" failed. Use --force to continue.
 
