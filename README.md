@@ -1,7 +1,7 @@
 grunt-parallelize
 ====
 
-> Make your task parallel.
+Make your task parallel.
 
 [![NPM version][npm-image]][npm-url]
 ![Node.js version support][node-version]
@@ -171,8 +171,9 @@ grunt.initConfig({
 
 This plugin is inspired by [sindresorhus's grunt-concurrent](https://github.com/sindresorhus/grunt-concurrent). Thanks!
 
-## Release History
+## Changelog
 
+* 2016-04-07 v1.1.6 Use grunt@1 for internal test [#30](https://github.com/teppeis/grunt-parallelize/pull/30)
 * 2016-03-21 v1.1.5 Update dependencies
 * 2016-03-16 v1.1.4 Support grunt@v1.0.0 [#24](https://github.com/teppeis/grunt-parallelize/pull/24)
 * 2015-11-05 v1.1.3 Cleanup tmp files [#21](https://github.com/teppeis/grunt-parallelize/issues/21)
