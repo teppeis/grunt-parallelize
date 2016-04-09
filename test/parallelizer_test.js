@@ -1,6 +1,5 @@
 'use strict';
 
-require('mocha');
 var expect = require('expect.js');
 var Parallelizer = require('../lib/parallelizer');
 

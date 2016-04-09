@@ -2,7 +2,7 @@ language: node_js
 env:
   global:
     # delay to control order of test
-    - DELAY_FACTOR=3
+    - DELAY_FACTOR=3.5
 node_js:
   - "0.10"
   - "0.12"

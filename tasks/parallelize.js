@@ -15,6 +15,7 @@ var toBeKilled = [];
 
 module.exports = function(grunt) {
   grunt.registerMultiTask('parallelize', 'Parallelize your task.', function() {
+    /* eslint-disable no-invalid-this */
     var args = this.nameArgs.split(':');
     var task = args[1];
     var target = args[2];
@@ -36,6 +37,7 @@ module.exports = function(grunt) {
         parallelizer.exec(task, target);
       }
     }
+    /* eslint-enable no-invalid-this */
   });
 };
 
