@@ -1,13 +1,12 @@
 'use strict';
 
-require('mocha');
-var expect = require('expect.js');
 var exec = require('child_process').exec;
 var fs = require('fs');
 var path = require('path');
-var rimraf = require('rimraf');
-var glob = require('glob');
 var ansidiff = require('ansidiff');
+var expect = require('expect.js');
+var glob = require('glob');
+var rimraf = require('rimraf');
 
 describe('grunt-parallelize', function() {
   this.timeout(5000);
@@ -58,26 +57,26 @@ describe('grunt-parallelize', function() {
   });
 
   describe('Writes files', function() {
-    it('Compact Format', function(done){
+    it('Compact Format', function(done) {
       testGruntfile('compactFormatWithDest', done);
     });
 
-    it('Files Array Format', function(done){
+    it('Files Array Format', function(done) {
       testGruntfile('filesArrayFormatWithDest', done);
     });
 
-    it('Files Object Format', function(done){
+    it('Files Object Format', function(done) {
       testGruntfile('filesObjectFormatWithDest', done);
     });
   });
 });
 
-function testGruntfile(name, callback){
-  var prefix = __dirname + '/cases/' + name;
+function testGruntfile(name, callback) {
+  var prefix = path.join(__dirname, 'cases', name);
   var gruntfile = prefix + '.Gruntfile.js';
-  var expectedDir = __dirname + '/fixtures/file_output/';
-  var expectedFiles = glob.sync(expectedDir + name + '-*.txt');
-  var outputDir = __dirname + '/output/';
+  var expectedDir = path.join(__dirname, 'fixtures', 'file_output');
+  var expectedFiles = glob.sync(path.join(expectedDir, name + '-*.txt'));
+  var outputDir = path.join(__dirname, 'output');
   if (expectedFiles.length > 0) {
     // clean up the output dir
     rimraf.sync(outputDir);
@@ -96,9 +95,9 @@ function testGruntfile(name, callback){
     }
     assertDiff(stdout, expected);
 
-    expectedFiles.forEach(function(expectedFile){
+    expectedFiles.forEach(function(expectedFile) {
       var file = path.basename(expectedFile);
-      var actual = fs.readFileSync(outputDir + file, {encoding: 'utf8'});
+      var actual = fs.readFileSync(path.join(outputDir, file), {encoding: 'utf8'});
       var expected = fs.readFileSync(expectedFile, {encoding: 'utf8'});
       assertDiff(actual, expected);
     });

@@ -10,8 +10,14 @@
     "node": ">= 0.10.0"
   },
   "main": "./tasks/parallelize.js",
+  "files": [
+    "lib",
+    "tasks"
+  ],
   "scripts": {
-    "test": "grunt test"
+    "lint": "eslint lib tasks test/lib test/*_test.js",
+    "mocha": "mocha test/*_test.js",
+    "test": "npm run lint && npm run mocha"
   },
   "dependencies": {
     "async": "^1.5.0",
@@ -21,16 +27,13 @@
   },
   "devDependencies": {
     "ansidiff": "^1.0.0",
+    "eslint": "^2.7.0",
+    "eslint-config-teppeis": "^2.0.2",
     "expect.js": "^0.3.1",
     "glob": "^7.0.3",
     "grunt": "^1.0.1",
-    "grunt-contrib-jshint": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-mocha-test": "^0.12.7",
-    "load-grunt-tasks": "^3.1.0",
-    "mocha": "^2.2.1",
-    "rimraf": "^2.3.2",
-    "time-grunt": "^1.1.0"
+    "mocha": "^2.4.5",
+    "rimraf": "^2.3.2"
   },
   "peerDependencies": {
     "grunt": ">=0.4.0"
