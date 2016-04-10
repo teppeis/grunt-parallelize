@@ -9,7 +9,7 @@ var glob = require('glob');
 var rimraf = require('rimraf');
 
 describe('grunt-parallelize', function() {
-  this.timeout(5000);
+  this.timeout(6000);
 
   describe('grunt parallelize:task:target', function() {
     it('supports "Compact Format"', function(done) {
