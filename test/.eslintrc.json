@@ -3,10 +3,12 @@
     "mocha": true
   },
   "rules": {
-    "no-sync": 0,
+    // for mocha
+    "no-invalid-this": 0,
+    // mitigating
     "no-console": 0,
     "no-process-env": 0,
-    "no-invalid-this": 0,
+    "no-sync": 0,
     "one-var": [2, {"uninitialized": "always", "initialized": "never"}]
   }
 }

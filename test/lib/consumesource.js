@@ -27,7 +27,7 @@ module.exports = function(filepath, callback) {
         var factor = Number(process.env.DELAY_FACTOR) || 1;
         setTimeout(function() {
           callback();
-        }, (Number(match[1]) - 1) * factor);
+        }, Number(match[1]) * factor);
       } else {
         // throw the body message.
         callback(new Error(body));
