@@ -7,7 +7,7 @@
     "email": "teppeis@gmail.com"
   },
   "engines": {
-    "node": ">= 0.10.0"
+    "node": ">= 4"
   },
   "main": "./tasks/parallelize.js",
   "files": [
