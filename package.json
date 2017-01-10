@@ -28,7 +28,7 @@
   "devDependencies": {
     "ansidiff": "^1.0.0",
     "eslint": "^2.11.0",
-    "eslint-config-teppeis": "^2.6.0",
+    "eslint-config-teppeis": "^3.9.0",
     "eslint-plugin-node": "^1.5.2",
     "expect.js": "^0.3.1",
     "glob": "^7.0.3",
