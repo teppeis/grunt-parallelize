@@ -1,6 +1,8 @@
 grunt-parallelize
 ====
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/teppeis/grunt-parallelize.svg)](https://greenkeeper.io/)
+
 Make your task parallel.
 
 [![NPM version][npm-image]][npm-url]
